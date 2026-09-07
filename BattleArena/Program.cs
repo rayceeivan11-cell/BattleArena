@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BattleArena
@@ -11,20 +12,20 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            int round = 1;
-            Warrior Raymond = new Warrior("Raymond", 100, 30, "Dinuraan");
-            Warrior Kirk = new Warrior("Kirk", 200, 15, "Dinaganan");
+            var Raymond = new Marksman("Raymond", 100, 30, 3);
+            var Kirk = new Tank("Kirk", 200, 15, 10);
 
             Raymond.DisplayStatus();
             Kirk.DisplayStatus();
 
             while(Raymond.IsAlive && Kirk.IsAlive)
             {
-                Console.WriteLine($"-------- Round {round} --------");
+                Console.WriteLine("\n\n=================================================");
                 Raymond.Attack(Kirk);
+                Console.WriteLine("------------------------------------------------_");
+                Thread.Sleep(2000);
                 Kirk.Attack(Raymond);
-                Console.WriteLine("------------------------------");
-                round++;
+                Thread.Sleep(2000); 
             }
 
             Console.ReadKey();

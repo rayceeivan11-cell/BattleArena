@@ -12,8 +12,8 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            var Raymond = new Marksman("Raymond", 100, 30, 3);
-            var Kirk = new Tank("Kirk", 200, 15, 10);
+            var Raymond = new Raymond(100, 30, 3);
+            var Kirk = new Kirk( 200, 15, 10);
 
             Raymond.DisplayStatus();
             Kirk.DisplayStatus();
@@ -22,9 +22,11 @@ namespace BattleArena
             {
                 Console.WriteLine("\n\n=================================================");
                 Raymond.Attack(Kirk);
-                Console.WriteLine("------------------------------------------------_");
+                Kirk.DisplayStatus();
+                Console.WriteLine("-------------------------------------------------");
                 Thread.Sleep(2000);
                 Kirk.Attack(Raymond);
+                Raymond.DisplayStatus();
                 Thread.Sleep(2000); 
             }
 

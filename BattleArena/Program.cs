@@ -1,5 +1,5 @@
 ﻿using BattleArena.Enums;
-using BattleArena.Warriors;
+using BattleArena.Warriors.Characters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,25 +13,15 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            var Raymond = new Raymond(100, 30, 3, TeamType.A);
-            var Kirk = new Kirk( 200, 15, 10, TeamType.B);
+            var Raymond = new Raymond(100, 30, 25, 10, TeamType.A);
+            var Kirk = new Kirk( 200, 15, 10, 30, TeamType.B);
+            var Agoot = new Agoot(150, 20, 15, 10, TeamType.A);
 
-            Raymond.DisplayStatus();
-            Kirk.DisplayStatus();
+            BattleArena.AddWarrior(Raymond);
+            BattleArena.AddWarrior(Kirk);
+            BattleArena.AddWarrior(Agoot);
 
-            while(Raymond.IsAlive && Kirk.IsAlive)
-            {
-                Console.WriteLine("\n\n=================================================");
-                Raymond.Attack(Kirk);
-                Kirk.DisplayStatus();
-                Console.WriteLine("-------------------------------------------------");
-                Thread.Sleep(2000);
-                Kirk.Attack(Raymond);
-                Raymond.DisplayStatus();
-                Thread.Sleep(2000); 
-            }
-
-            Console.ReadKey();
+            BattleArena.StartBattle();
         }
     }
 }

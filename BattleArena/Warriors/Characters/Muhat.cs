@@ -3,13 +3,13 @@ using BattleArena.Enums;
 using System;
 using System.Threading;
 
-namespace BattleArena.Warriors
+namespace BattleArena.Warriors.Characters
 {
     public class Muhat : Warrior
     {
         public int PunchDamage { get; private set; }
-        public Muhat(int health, int attackPower, int punchDamage, TeamType teamType) 
-            : base("Muhat", health, attackPower, WarriorType.Fighter, teamType)
+        public Muhat(int health, int attackPower, int speed, int punchDamage, TeamType teamType) 
+            : base("Muhat", health, attackPower, speed, WarriorType.Fighter, teamType)
         {
             PunchDamage = punchDamage;
             attackPower += PunchDamage;

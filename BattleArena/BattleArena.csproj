@@ -47,6 +47,8 @@
     <Compile Include="Abilities\IHealable.cs" />
     <Compile Include="Abilities\IHealCaster.cs" />
     <Compile Include="Abilities\ISpellCaster.cs" />
+    <Compile Include="BattleArena.cs" />
+    <Compile Include="Combat\TurnEntry.cs" />
     <Compile Include="Enums\TeamType.cs" />
     <Compile Include="Enums\WarriorType.cs" />
     <Compile Include="Program.cs" />

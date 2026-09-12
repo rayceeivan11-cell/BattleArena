@@ -1,4 +1,5 @@
-﻿using BattleArena.Warriors;
+﻿using BattleArena.Enums;
+using BattleArena.Warriors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            var Raymond = new Raymond(100, 30, 3);
-            var Kirk = new Kirk( 200, 15, 10);
+            var Raymond = new Raymond(100, 30, 3, TeamType.A);
+            var Kirk = new Kirk( 200, 15, 10, TeamType.B);
 
             Raymond.DisplayStatus();
             Kirk.DisplayStatus();

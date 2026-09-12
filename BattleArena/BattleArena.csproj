@@ -43,10 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abilities\IDefender.cs" />
+    <Compile Include="Abilities\IHealable.cs" />
+    <Compile Include="Abilities\IHealCaster.cs" />
+    <Compile Include="Abilities\ISpellCaster.cs" />
+    <Compile Include="Enums\TeamType.cs" />
+    <Compile Include="Enums\WarriorType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Warriors\Characters\Agoot.cs" />
-    <Compile Include="Warriors\DamageInfo.cs" />
+    <Compile Include="Combat\DamageInfo.cs" />
     <Compile Include="Warriors\Characters\Muhat.cs" />
     <Compile Include="Warriors\Characters\Raymond.cs" />
     <Compile Include="Warriors\Characters\Kirk.cs" />

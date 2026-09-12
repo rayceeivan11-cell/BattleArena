@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BattleArena.Combat;
+using BattleArena.Enums;
+using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace BattleArena.Warriors
 {
     public class Muhat : Warrior
     {
         public int PunchDamage { get; private set; }
-        public Muhat(int health, int attackPower, int punchDamage) 
-            : base("Muhat", health, attackPower, WarriorType.Fighter)
+        public Muhat(int health, int attackPower, int punchDamage, TeamType teamType) 
+            : base("Muhat", health, attackPower, WarriorType.Fighter, teamType)
         {
             PunchDamage = punchDamage;
             attackPower += PunchDamage;
@@ -19,7 +17,7 @@ namespace BattleArena.Warriors
 
         public override void Attack(Warrior target)
         {
-            var dmginfo = new DamageInfo(AttackPower, "Sapak",HasCriticalChance);
+            var dmginfo = new DamageInfo(AttackPower, "Sapak", HasCriticalChance, this);
             TakeDamage(dmginfo);
 
             Console.WriteLine($"->{Name}: Sasapakin kita {target.Name}!");

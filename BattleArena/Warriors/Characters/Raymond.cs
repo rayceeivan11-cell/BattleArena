@@ -1,22 +1,23 @@
-﻿using System;
+﻿using BattleArena.Combat;
+using BattleArena.Enums;
+using System;
 using System.Threading;
-using System.Xml.Linq;
 
 namespace BattleArena.Warriors
 {
     public class Raymond : Warrior
     {
         public int DuraDamage { get; private set; }
-        public Raymond(int health, int attackPower, int arrowDamage) 
-            : base("Raymond", health, attackPower, WarriorType.Marksman)
+        public Raymond(int health, int attackPower, int duraDamage, TeamType teamType) 
+            : base("Raymond", health, attackPower, WarriorType.Marksman, teamType)
         {
-            DuraDamage = arrowDamage;
+            DuraDamage = duraDamage;
             attackPower += DuraDamage; 
         }
 
         public override void Attack(Warrior target)
         {
-            var dmginfo = new DamageInfo(AttackPower, "Dura", HasCriticalChance);
+            var dmginfo = new DamageInfo(AttackPower, "Dura", HasCriticalChance, this);
             TakeDamage(dmginfo);
 
             Console.WriteLine($"->{Name}: Duburaan kita bebe {target.Name}!");

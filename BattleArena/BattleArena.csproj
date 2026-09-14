@@ -55,9 +55,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Warriors\Characters\Agoot.cs" />
     <Compile Include="Combat\DamageInfo.cs" />
+    <Compile Include="Warriors\Characters\Lando.cs" />
+    <Compile Include="Warriors\Characters\Miko.cs" />
     <Compile Include="Warriors\Characters\Muhat.cs" />
+    <Compile Include="Warriors\Characters\Nena.cs" />
+    <Compile Include="Warriors\Characters\Omar.cs" />
+    <Compile Include="Warriors\Characters\Paolo.cs" />
     <Compile Include="Warriors\Characters\Raymond.cs" />
     <Compile Include="Warriors\Characters\Kirk.cs" />
+    <Compile Include="Warriors\Characters\Tina.cs" />
     <Compile Include="Warriors\Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
